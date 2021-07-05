@@ -335,12 +335,12 @@ export class DeleteFavouriteMovieService {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http
-      .put(`${apiUrl}users/${user}/favourites/${id}`, id, {
+      .delete(`${apiUrl}users/${user}/favourites/${id}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
-        })
+        }),
       })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+      .pipe(catchError(this.handleError));
   }
 
   private extractResponseData(res: Response | {}): Response | {} {
