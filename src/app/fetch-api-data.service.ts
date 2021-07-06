@@ -7,6 +7,10 @@ import { map } from 'rxjs/operators';
 const apiUrl = 'https://flixinfo.herokuapp.com/'
 
 //User Registration
+/**
+   * API call to the user registration endpoint.
+   * @param userDetails User name, password, email and date of birth.
+   */
 @Injectable({
   providedIn: 'root'
 })
@@ -32,6 +36,12 @@ export class UserRegistrationService {
 }
 
 //User Login
+/**
+  * API call to the user login endpoint.
+  * @param username Username of type string.
+  * @param password Password of type string.
+  * @returns object with username and bearer token
+  */
 @Injectable({
   providedIn: 'root'
 })
@@ -58,6 +68,10 @@ export class UserLoginService {
 }
 
 // Get all movies
+/**
+   * API call to the movies endpoint.
+   * @returns array of movie objects.
+   */
 @Injectable({
   providedIn: 'root'
 })
@@ -94,6 +108,11 @@ export class GetAllMoviesService {
 }
 
 //Get one movie
+/**
+   * API call to a single movie endpoint.
+   * @params movie title of type string.
+   * @returns movie object.
+   */
 @Injectable({
   providedIn: 'root'
 })
@@ -130,6 +149,11 @@ export class GetOneMovieService {
 }
 
 //Get director
+/**
+   * API call to the director name endpoint.
+   * @param directorName name of movie director of type string.
+   * @returns director object.
+   */
 @Injectable({
   providedIn: 'root'
 })
@@ -166,7 +190,11 @@ export class GetDirectorService {
 }
 
 //Get genre
-
+/**
+   * API call to the genre name endpoint.
+   * @param genre name of genre of type string.
+   * @returns genre object.
+   */
 @Injectable({
   providedIn: 'root'
 })
@@ -202,17 +230,12 @@ export class GetGenreService {
   }
 }
 
-/* 
-Get user 
-I did not create such a request in my API
-*/
-
-/* 
-Get favourite movies for a user
-I did not create such a request in my API
-*/
-
 //Add a movie to favourite Movies
+/**
+ * API call to the movie ID endpoint
+ * in order to add the movie ID to the FavoriteMovies array in the user object.
+ * @param movieID of type string.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -248,6 +271,12 @@ export class AddFavouriteMovieService {
 }
 
 //Edit user
+/**
+   * API call to the User endpoint
+   * in order to edit the user data.
+   * @param userDetails object of user name, password, email and date of birth.
+   * @returns user object.
+   */
 @Injectable({
   providedIn: 'root'
 })
@@ -285,7 +314,11 @@ export class EditUserService {
 
 
 //Delete user
-
+/**
+ * API call to the User endpoint
+ * in order to delete the user data.
+ * @returns user object.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -324,7 +357,11 @@ export class DeleteUserService {
 
 
 //Delete a movie from the favorite movies
-
+/**
+ * API call to the movie ID endpoint
+ * in order to delete the movie ID from the FavoriteMovies array in the user object.
+ * @param movieID of type string.
+ */
 @Injectable({
   providedIn: 'root'
 })
